@@ -17,19 +17,19 @@ import javax.validation.constraints.Pattern;
  * @Created on Thursday, August 27th, 2020
  */
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-@Entity
-@Table(name = "users")
+@Data // Lombok to create the Getters and Setters
+@AllArgsConstructor // Lombok to create the All Args Constructor
+@NoArgsConstructor // Lombok to create the No Args Constructor
+@Entity // Spring Boot annotation to enable database persistence
+@Table(name = "users") // Persist data into table with name users
 public class User {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id // Database table key is the ID
+    @GeneratedValue(strategy = GenerationType.AUTO) // Create key value sequence and auto generate the identifier
     private Long id;
 
-    @NotNull
-    @Pattern(regexp = "[a-zA-Z]+")
+    @NotNull // Value is mandatory
+    @Pattern(regexp = "[a-zA-Z]+") // Value must consist of values as per Regular Expression pattern
     private String firstName;
 
     @NotNull
@@ -37,13 +37,13 @@ public class User {
     private String lastName;
 
     @NotNull
-    @Digits(integer = 3, fraction = 0)
+    @Digits(integer = 3, fraction = 0) // Value must consist of digits only with a maximum of 3 digits
     private int age;
 
     @NotNull
-    @Email
+    @Email // Value must be an email address
     private String email;
 
-    @JsonIgnore
+    @JsonIgnore // Ignore the password with JSON requests (security related)
     private String password;
 }

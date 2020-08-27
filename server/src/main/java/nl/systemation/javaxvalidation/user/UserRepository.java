@@ -9,6 +9,6 @@ import org.springframework.stereotype.Repository;
  * @Created on Thursday, August 27th, 2020
  */
 
-@Repository
+@Repository // Mark this Java class as the repository layer
 public interface UserRepository extends JpaRepository<User, Long> {
 }

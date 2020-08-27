@@ -13,7 +13,7 @@ import java.util.Optional;
  * @Created on Thursday, August 27th, 2020
  */
 
-@RequiredArgsConstructor
+@RequiredArgsConstructor // Lombok to create the Required Args Constructor
 @CrossOrigin(origins="http://localhost:3000", maxAge = 3600) // Allow access from port 3000 to this API
 @RestController // Mark this Java class as the controller layer
 @RequestMapping("/api/users") // Link to the API access point
@@ -36,6 +36,8 @@ public class UserController {
         userService.updateUser(user);
     }
 
+    // NOTE: @Valid annotation enables the Bean Validation annotations as per the entity
+    // The incoming JSON data is checked against the Bean Validation annotations as per the entity
     @PostMapping
     public void addUser(@Valid @RequestBody User user) {
         userService.addUser(user);

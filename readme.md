@@ -65,7 +65,7 @@ H2 is an open-source lightweight Java database. It can be embedded in Java appli
 A Project Object Model or POM is the fundamental unit of work in Maven.<br />
 It is an XML file that contains information about the project and configuration details used by Maven to build the project.<br />
 <br />
-The following listing shows the ```POM.xml``` file that is created once you've chosen a Maven project:
+The following listing shows the ```POM.xml``` file that is created once you've chosen a Maven project:<br />
 **NOTE:** Add the ```Spring Boot Validation``` dependency in your pre-generated ```POM.xml``` file!
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -142,7 +142,7 @@ The following listing shows the ```POM.xml``` file that is created once you've c
 <hr>
 
 ## Create back-end files
-Now let's add some code to make a fully functioning **Spring Boot CRUD application.**<br />
+Now let's add some code to make a fully functioning **Spring Boot MVC servlet.**<br />
 To do so, following files have to be created:
 * Entity
 * Controller
@@ -180,7 +180,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Create key value sequence
     private Long id;
     
-    @NotNull // Mandatory field
+    @NotNull // Value is mandatory
     @Pattern(regexp = "[a-zA-Z]+") // Value must consist of values as per Regular Expression pattern
     private String firstName;
 
@@ -299,7 +299,7 @@ In this example we will implement the JpaRepository, which has some pre-configur
 ```@Repository```: This is a **Spring Boot** annotation which marks the Java interface as the Repository;
 
 ```java
-@Repository
+@Repository // Mark this Java class as the repository layer
 public interface UserRepository extends JpaRepository<User, Long> {
 }
 ```
@@ -338,7 +338,7 @@ In order for us to test the http requests, download Postman via: https://www.pos
 Once installed, start-up Postman.
 <hr>
 
-## Start back-end
+## Start server
 
 Open the terminal window, and execute following command:<br />
 *Note, each command line will be indicated with the **$** symbol.*
