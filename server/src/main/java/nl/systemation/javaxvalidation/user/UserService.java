@@ -7,6 +7,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * @Author Jeffrey Spaan
+ * @Company Systemation
+ * @Created on Thursday, August 27th, 2020
+ */
+
 @RequiredArgsConstructor // Lombok to create the Required Args Constructor
 @Service // Mark this Java class as the service layer
 public class UserService {

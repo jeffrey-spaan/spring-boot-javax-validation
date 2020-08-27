@@ -11,6 +11,12 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
+/**
+ * @Author Jeffrey Spaan
+ * @Company Systemation
+ * @Created on Thursday, August 27th, 2020
+ */
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
