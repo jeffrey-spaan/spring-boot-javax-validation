@@ -389,7 +389,6 @@ To see more details about the error, ***open your terminal.***
 <br />
 
 ###Congratulations!
-
 You have successfully created a **Spring Boot application** which validates input data **(Bean Validation)** with the use of **Javax Validation annotations.** <br />
 With this we have come to the end of this tutorial.<br />
 I hope you've enjoyed the process, please give it a **Star** in case you liked it.<br />
