@@ -14,8 +14,14 @@ In this tutorial we will cover the basics and setup of a **Spring Boot applicati
 Configuring the back-end of your application is easier than ever with the use of Spring Boot dependencies which enables you to simply select the required dependencies to quickly setup the back-end of your application.<br />
 
 ### What is Javax Validation?
-Validating user input is, of course, a incredible common requirement in the majority of applications, and the **Java Bean Validation framework** has become the de-facto standard for handling this kind of logic.
-**Javax Validation** is a standard framework - **JSR 380**, also known as ***Bean Validation 2.0*** enforcing constraints using data annotations such as: ***@NotNull, @Email, @Digits*** and many more.
+Validating user input is, of course, an incredible common requirement in the majority of applications, and the **Java Bean Validation framework** has become the de-facto standard for handling this kind of logic.
+**Javax Validation** is a standard framework - **JSR 380**, also known as ***Bean Validation 2.0*** enforcing constraints using data annotations such as, and not limited to:<br />
+***@NotNull<br />
+ @Email<br />
+ @Digits<br />
+ @Size<br />
+ @Pattern***<br />
+ [and many more...](https://docs.oracle.com/javaee/7/api/javax/validation/constraints/package-summary.html)
 
 ## Getting Started
 
@@ -173,18 +179,20 @@ We will also use some Lombok annotations to reduce boilerplate code and ensure o
 @AllArgsConstructor // Lombok to create the All Args Constructor
 @NoArgsConstructor // Lombok to create the No Args Constructor
 @Entity // Spring Boot annotation to enable database persistence
-@Table(	name = "users") // Persist data into table with name users
+@Table(name = "users") // Persist data into table with name users
 public class User {
 
     @Id // Database table key is the ID
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // Create key value sequence
+    @GeneratedValue(strategy = GenerationType.AUTO) // Create key value sequence and auto generate the identifier
     private Long id;
-    
+
     @NotNull // Value is mandatory
+    @Size(min = 2, max = 50) // Value must contain at least 2 characters and a maximum of 50 characters
     @Pattern(regexp = "[a-zA-Z]+") // Value must consist of values as per Regular Expression pattern
     private String firstName;
 
     @NotNull
+    @Size(min = 2, max = 50)
     @Pattern(regexp = "[a-zA-Z]+")
     private String lastName;
 
@@ -198,7 +206,6 @@ public class User {
 
     @JsonIgnore // Ignore the password with JSON requests (security related)
     private String password;
-
 }
 ```
 <hr>

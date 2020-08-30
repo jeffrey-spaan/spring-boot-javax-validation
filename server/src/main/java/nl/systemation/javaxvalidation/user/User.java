@@ -6,10 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import javax.validation.constraints.Digits;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
+import javax.validation.constraints.*;
 
 /**
  * @Author Jeffrey Spaan
@@ -29,10 +26,12 @@ public class User {
     private Long id;
 
     @NotNull // Value is mandatory
+    @Size(min = 2, max = 50) // Value must contain at least 2 characters and a maximum of 50 characters
     @Pattern(regexp = "[a-zA-Z]+") // Value must consist of values as per Regular Expression pattern
     private String firstName;
 
     @NotNull
+    @Size(min = 2, max = 50)
     @Pattern(regexp = "[a-zA-Z]+")
     private String lastName;
 
