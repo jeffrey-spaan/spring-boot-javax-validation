@@ -12,6 +12,7 @@ import javax.validation.constraints.*;
  * @Author Jeffrey Spaan
  * @Company Systemation
  * @Created on Thursday, August 27th, 2020
+ * @Update on Sunday, August 30th, 2020
  */
 
 @Data // Lombok to create the Getters and Setters

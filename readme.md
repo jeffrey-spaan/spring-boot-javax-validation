@@ -1,6 +1,6 @@
 # Spring Boot Javax Validation Example
 *Created on: 27-08-2020*<br />
-*Last updated on: 27-08-2020*
+*Last updated on: 30-08-2020*
 
 **Contributor:**<br />
 Jeffrey Spaan *(Solution Consultant @ Systemation, the Netherlands)*
